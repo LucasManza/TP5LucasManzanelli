@@ -32,7 +32,7 @@ public class Bullet : Collisionable
         Move(Direction);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void CollisionWith(Collider other)
     {
         var collision = other.gameObject.GetComponent<Collisionable>();
         if (collision == null || collision.GetType() == Type.None || CurrentStatus != Status.Normal) return;

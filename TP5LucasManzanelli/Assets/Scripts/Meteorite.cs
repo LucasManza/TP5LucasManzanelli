@@ -20,7 +20,7 @@ public class Meteorite : Collisionable
         Move(Direction);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void CollisionWith(Collider other)
     {
         var collision = other.gameObject.GetComponent<Collisionable>();
         if (!collision || collision.GetType() == Type.None || collision.GetType() == Type.Bullet ||

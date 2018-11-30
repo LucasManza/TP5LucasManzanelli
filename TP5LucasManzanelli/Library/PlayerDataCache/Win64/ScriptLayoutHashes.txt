@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/manza/projects/unity/TP5LucasManzanelli.exe
+C:/Users/manza/projects/unity/Tp5/TP5LucasManzanelli.exe
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
@@ -18,7 +18,6 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 0ddb2c46096a1e59e0dce07886ce4769 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.CollisionManagement
 d4bec2b2f95686bf6575038719467fb7 Assembly-CSharp.dll:.MainMenuManagement
 f6637497451c9a030c421de4a1ad5cdb Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 b14b4630cc47b6e9ea8a644551a6a8cc Unity.TextMeshPro.dll:TMPro.TMP_Text
@@ -157,6 +156,7 @@ f351a53a5bb6578f76af7819b5eb8592 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 ad24de185ef9a605870b931cda4f181e Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+732e055e2fb7661eeed2dc84359d36c9 Assembly-CSharp.dll:Weapons.BigWeapon
 182e416670915c50a548c38c642db0d8 Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 f35860350df72508419d9f9fcd288594 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 182e416670915c50a548c38c642db0d8 Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour
@@ -196,7 +196,8 @@ f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 486cd95c82d8305219c352c06b776e1f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 dfce8c558ec5126c783757d83e5ec844 Assembly-CSharp.dll:.Bullet
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
-2bc98835558c5f4f4aa71e0c127bbc8f Assembly-CSharp.dll:Weapons.DefaultWeapon
+3815bb1e6a6a530332cc60577ddf0801 Assembly-CSharp.dll:.PowerUpWeapon
+732e055e2fb7661eeed2dc84359d36c9 Assembly-CSharp.dll:Weapons.DefaultWeapon
 63dc254c76014672b06138f4f29cce2e Assembly-CSharp.dll:.GameManegement
 42b5647a5b82f50b204adbb30c25b9ee Assembly-CSharp.dll:.Ship
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -216,6 +217,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+d678a3c28b9dcb8db294d3598580c13d Assembly-CSharp.dll:.LimitCollider
 486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 9d863b523b577f5c3d915351a74cd338 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -227,6 +229,7 @@ e033f131358cea5a0eabf9561e781deb UnityEngine.TestRunner.dll:UnityEngine.TestTool
 70f7dc248db3379548a88e8d4fa049f8 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+e957d1b38b729dabeec92f6708e5d5c2 Assembly-CSharp.dll:.Health
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -307,6 +310,3 @@ f351a53a5bb6578f76af7819b5eb8592 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 ad24de185ef9a605870b931cda4f181e Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 c31ff9acb65f7a15b5c6fd77c3314d83 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 486cd95c82d8305219c352c06b776e1f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-2bc98835558c5f4f4aa71e0c127bbc8f Assembly-CSharp.dll:Weapons.BigWeapon
-b92207011ef1e4ad89c4abf64b02d7c4 Assembly-CSharp.dll:.PowerUpWeapon
-e957d1b38b729dabeec92f6708e5d5c2 Assembly-CSharp.dll:.Health

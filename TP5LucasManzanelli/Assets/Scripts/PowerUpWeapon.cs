@@ -16,7 +16,7 @@ public class PowerUpWeapon : Collisionable
     {
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void CollisionWith(Collider other)
     {
         var collisionable = other.GetComponent<Collisionable>();
         if (collisionable == null) return;

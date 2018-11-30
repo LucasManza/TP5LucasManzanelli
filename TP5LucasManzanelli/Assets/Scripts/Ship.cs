@@ -26,7 +26,7 @@ public class Ship : Collisionable
         WeaponPosition(Weapon);
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void CollisionWith(Collider other)
     {
         Debug.Log("SHIP ON COLLISION ENTER!");
         var collision = other.gameObject.GetComponent<Collisionable>();

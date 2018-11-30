@@ -43,8 +43,15 @@ public abstract class Collisionable : MonoBehaviour
         rb.useGravity = false;
     }
 
-    public abstract void Move(Vector2 direction);
+    private void OnTriggerEnter(Collider other)
+    {
+        CollisionWith(other);
+    }
 
+    protected abstract void CollisionWith(Collider other);
+
+    public abstract void Move(Vector2 direction);
+    
     public void NextStatus()
     {
         switch (CurrentStatus)
