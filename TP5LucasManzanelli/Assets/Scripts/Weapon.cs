@@ -4,8 +4,7 @@
 public abstract class Weapon : MonoBehaviour
 {
     public GameObject BulletGameObject;
-    protected float TopDamage;
-    protected Weapon Upgrade;
+    public Weapon Upgrade;
     public float TopAmmo;
 
 

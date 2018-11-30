@@ -1,24 +1,31 @@
 ﻿using UnityEngine;
+using Weapons;
 
 public class PowerUpWeapon : Collisionable
 {
-    public Weapon Weapon;
+    public GameObject Weapon;
 
     private void Awake()
     {
         Type = Type.Weapon;
+        if (Weapon.GetComponent<Weapon>() == null)
+            Weapon.AddComponent<DefaultWeapon>();
+    }
+
+    public override void Move(Vector2 direction)
+    {
     }
 
     private void OnTriggerEnter(Collider other)
     {
         var collisionable = other.GetComponent<Collisionable>();
-        if (collisionable == null || collisionable.GetType() != Type.Ship) return;
+        if (collisionable == null) return;
 
-        ((Ship) collisionable).UpdateWeapon(Weapon);
+        if (collisionable.GetType() == Type.Ship)
+        {
+            ((Ship) collisionable).UpdateWeapon(Weapon);
+        }
+
         ChangeStatus(Status.Destroy);
-    }
-
-    public override void CollisionWith(Collisionable collision)
-    {
     }
 }

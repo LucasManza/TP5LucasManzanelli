@@ -29,6 +29,7 @@ namespace controller
         {
             if (collisionable.GetType() == Type.Health || collisionable.GetType() == Type.Weapon)
             {
+                Debug.Log("POWER UP SAVE!");
                 PowerUps.Add(collisionable);
             }
         }

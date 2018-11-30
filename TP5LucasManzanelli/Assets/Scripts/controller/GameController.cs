@@ -9,6 +9,8 @@ namespace controller
         {
             Store.GetMeteorites().ForEach(m => { m.InmediateDestroy(); });
             Store.GetBullets().ForEach(b => { b.InmediateDestroy(); });
+            Store.GetPowerUps().ForEach(p => { p.InmediateDestroy(); });
+            Store.GetPowerUps().Clear();
             Store.GetMeteorites().Clear();
             Store.GetBullets().Clear();
         }
@@ -22,6 +24,7 @@ namespace controller
         {
             RemoveDestroyItems(Store.GetMeteorites());
             RemoveDestroyItems(Store.GetBullets());
+            RemoveDestroyItems(Store.GetPowerUps());
         }
 
         private static void RemoveDestroyItems(List<Collisionable> collisionables)

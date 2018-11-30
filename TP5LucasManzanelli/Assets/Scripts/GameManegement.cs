@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using controller;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManegement : MonoBehaviour
@@ -67,6 +64,9 @@ public class GameManegement : MonoBehaviour
         foreach (var ship in Store.GetAllShips())
         {
             ((Ship) ship).RestoreLife();
+            ((Ship) ship).Weapon.Upgrade = null;
+            var pos = RandomPosition();
+            ((Ship) ship).gameObject.transform.position = new Vector3(pos.X, pos.Y, 0f);
         }
 
         ChangeGameState(GameState.Playing);

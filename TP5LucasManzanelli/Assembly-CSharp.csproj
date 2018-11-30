@@ -56,10 +56,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Collisionable.cs" />
-    <Compile Include="Assets\Scripts\CollisionManagement.cs" />
     <Compile Include="Assets\Scripts\ConfigInputMap.cs" />
     <Compile Include="Assets\Scripts\ConfigurationManagement.cs" />
-    <Compile Include="Assets\Scripts\controller\CollisionEngine.cs" />
     <Compile Include="Assets\Scripts\controller\GameController.cs" />
     <Compile Include="Assets\Scripts\controller\PlayersController.cs" />
     <Compile Include="Assets\Scripts\controller\Store.cs" />
@@ -67,6 +65,7 @@
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\ICollisionable.cs" />
     <Compile Include="Assets\Scripts\KeysConfiguration.cs" />
+    <Compile Include="Assets\Scripts\LimitCollider.cs" />
     <Compile Include="Assets\Scripts\MainMenuManagement.cs" />
     <Compile Include="Assets\Scripts\Meteorite.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
@@ -81,22 +80,19 @@
     <Compile Include="Assets\Scripts\weapons\BigWeapon.cs" />
     <Compile Include="Assets\Scripts\weapons\DefaultWeapon.cs" />
     <Compile Include="Assets\Scripts\World.cs" />
-    <Compile Include="Assets\UML\weapons\BigWeapon.cs" />
-    <Compile Include="Assets\UML\weapons\DefaultWeapon.cs" />
-    <Compile Include="Assets\UML\World.cs" />
     <None Include="Assets\Resources\Fonts\guardians\license.txt" />
     <None Include="Assets\Resources\Fonts\guardians\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/manza/projects/unity/TP5LucasManzanelli/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/manza/projects/unity/Tp5/TP5LucasManzanelli/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/manza/projects/unity/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/manza/projects/unity/Tp5/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/manza/projects/unity/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/manza/projects/unity/Tp5/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/manza/projects/unity/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/manza/projects/unity/Tp5/TP5LucasManzanelli/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -329,10 +325,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\UML\controller" />
-    <Folder Include="Assets\UML\view" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,16 +7,20 @@ public class Health : Collisionable
         Type = Type.Health;
     }
 
+    public override void Move(Vector2 direction)
+    {
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         var collisionable = other.GetComponent<Collisionable>();
-        if (collisionable == null || collisionable.GetType() != Type.Ship) return;
+        if (collisionable == null) return;
 
-        ((Ship) collisionable).RestoreLife();
+        if (collisionable.GetType() == Type.Ship)
+        {
+            ((Ship) collisionable).RestoreLife();
+        }
+
         ChangeStatus(Status.Destroy);
-    }
-
-    public override void CollisionWith(Collisionable collision)
-    {
     }
 }

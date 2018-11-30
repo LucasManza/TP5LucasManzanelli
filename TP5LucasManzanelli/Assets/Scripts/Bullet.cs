@@ -29,7 +29,7 @@ public class Bullet : Collisionable
             InitTimerExplotion();
         }
 
-        Move();
+        Move(Direction);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,20 +45,9 @@ public class Bullet : Collisionable
         ChangeStatus(Status.Exploted);
     }
 
-    private void Move()
+    public override void Move(Vector2 direction)
     {
         if (CurrentStatus != Status.Normal) return;
-        Position = Movement.Move(Position, Direction, Speed, true);
-    }
-    
-    public override void CollisionWith(Collisionable collision)
-    {
-//        if (collision == null || collision.GetType() == Type.None || CurrentStatus != Status.Normal) return;
-//
-//        collision.DecreaseLife(Damage);
-//        if (collision.CurrentStatus == Status.Destroy || collision.GetCurrentLife() <= 0)
-//            PlayersController.IncrementScore(PlayerId,collision.Score);
-//        
-//        ChangeStatus(Status.Exploted);
+        Position = Movement.Move(Position, direction, Speed, true);
     }
 }

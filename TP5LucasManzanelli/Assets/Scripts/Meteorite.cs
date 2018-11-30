@@ -17,7 +17,7 @@ public class Meteorite : Collisionable
         CheckExplotion();
         DestroyGameObject();
         InitTimerExplotion();
-        Move();
+        Move(Direction);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,18 +31,9 @@ public class Meteorite : Collisionable
             ChangeStatus(Status.Exploted);
     }
 
-    public void Move()
+    public override void Move(Vector2 direction)
     {
         if (CurrentStatus != Status.Normal) return;
-
-//        var probability = Random.Range(0f, 1f);
-//        Position = probability > 0.1f
-//            ? Movement.Move(Position, Direction, Speed, false)
-//            : Movement.RandomMove(Position, Speed);
-        Position = Movement.Move(Position, Direction, Speed, false);
-    }
-
-    public override void CollisionWith(Collisionable collision)
-    {
+        Position = Movement.Move(Position, direction, Speed, false);
     }
 }

@@ -10,7 +10,7 @@ public class Ship : Collisionable
     {
         Type = Type.Ship;
         Speed = Speed < 1 ? 100 : Speed;
-        WeaponPosition();
+        WeaponPosition(Weapon);
     }
 
     private void Update()
@@ -18,13 +18,12 @@ public class Ship : Collisionable
         CheckExplotion();
     }
 
-    public void Move(Vector2 direction)
+    public override void Move(Vector2 direction)
     {
         if (CurrentStatus != Status.Normal) return;
         Position = Movement.Move(Position, direction, Speed, false);
         Direction = direction.Normalize();
-//        Weapon.gameObject.transform.position = gameObject.transform.position;
-        WeaponPosition();
+        WeaponPosition(Weapon);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,9 +48,17 @@ public class Ship : Collisionable
         Store.SaveBullet(Weapon.FiredWeapon(id, 1, weaponPosition, Direction));
     }
 
-    public void UpdateWeapon(Weapon weapon)
+    public void UpdateWeapon(GameObject weapon)
     {
-        Weapon = weapon;
+        if (weapon == null || this.Weapon == null)
+            return;
+
+
+        var pos = gameObject.transform.position;
+        pos = pos + new Vector3(0, 4, 0);
+        var w = Instantiate(weapon, pos, Quaternion.identity);
+//        w.gameObject.transform.SetParent(gameObject.transform);
+        this.Weapon.UpgradeWeapon(w.GetComponent<Weapon>());
     }
 
     public void IncrementLife(float amount)
@@ -70,25 +77,12 @@ public class Ship : Collisionable
         ChangeStatus(Status.Normal);
     }
 
-    public override void CollisionWith(Collisionable collision)
+    private void WeaponPosition(Weapon weapon)
     {
-//        if (!collision || collision.GetType() == Type.None)
-//            return;
-//        collision.DecreaseLife(Damage);
-    }
-
-    private void WeaponPosition()
-    {
-        if (Weapon == null || Weapon.BulletGameObject == null ||
-            Weapon.BulletGameObject.GetComponent<Collisionable>()) return;
-//        var distance = ImpactRadius + Weapon.BulletGameObject.GetComponent<Collisionable>().ImpactRadius;
-//        var direction = Position.Add(Direction.Multiply(distance*5));
-//        Weapon.gameObject.transform.position = new Vector3(direction.X, direction.Y, 0);
-
+        if (weapon == null || weapon.BulletGameObject == null ||
+            weapon.BulletGameObject.GetComponent<Collisionable>()) return;
         var direction = Position.Add(Direction.Multiply(5));
-        Weapon.gameObject.transform.position = new Vector3(direction.X, direction.Y, 0);
-
-        Debug.Log("Ship Position: " + gameObject.transform.position);
-        Debug.Log("Weapon Position: " + Weapon.gameObject.transform.position);
+        weapon.gameObject.transform.position = new Vector3(direction.X, direction.Y, 0);
+        WeaponPosition(weapon.Upgrade);
     }
 }
